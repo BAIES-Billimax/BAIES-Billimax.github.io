@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Baies | AI-Powered Dental Practice Intelligence</title>
+<meta name="description" content="Baies is developing Billimax, an AI-powered dental practice operations and revenue-cycle platform designed around each practice's authorized data and workflows.">
+<style>
+:root{--ink:#0b1f33;--muted:#5c6b7a;--line:#dce5ec;--brand:#0b4f75;--brand2:#1486a8;--soft:#f5f9fc;--white:#fff;--max:1160px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);line-height:1.55;background:#fff}
+a{color:inherit}.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+.nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-weight:850;letter-spacing:.08em}
+.mark{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--brand2));position:relative}.mark:after{content:"";position:absolute;inset:8px;border:2px solid #fff;border-left-color:transparent;border-radius:50%}
+.links{display:flex;gap:26px;align-items:center;font-size:14px}.links a{text-decoration:none}.btn{display:inline-flex;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:750;border:1px solid var(--line)}
+.btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;border:none}
+.hero{padding:92px 0 74px;background:radial-gradient(circle at 85% 15%,rgba(20,134,168,.12),transparent 30%),linear-gradient(180deg,#fff,#f8fcfe)}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:54px;align-items:center}.eyebrow{display:inline-flex;gap:8px;align-items:center;background:#eef7fa;border:1px solid #d7ebf3;padding:7px 11px;border-radius:999px;color:var(--brand);font-size:13px;font-weight:800}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--brand2)}h1{font-size:clamp(42px,6vw,72px);line-height:1.02;letter-spacing:-.045em;margin:22px 0}.lead{font-size:20px;color:var(--muted);max-width:700px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.note{font-size:13px;color:#71808f;margin-top:16px}
+.visual{background:#0d2539;border-radius:28px;padding:18px;box-shadow:0 18px 50px rgba(9,40,61,.12)}.app{background:#fff;border-radius:18px;padding:22px;display:grid;gap:14px}
+.app-top{display:flex;justify-content:space-between}.mini{font-size:13px;font-weight:850;color:var(--brand);letter-spacing:.06em}.pill{font-size:11px;background:#e9f7f6;color:#2b6f6c;padding:5px 8px;border-radius:999px;font-weight:800}
+.patient{border:1px solid var(--line);border-radius:15px;padding:15px}.patient b{display:block}.patient span{font-size:12px;color:var(--muted)}.event{border:1px solid var(--line);border-radius:13px;padding:12px}.event b{font-size:13px}.event p{font-size:12px;color:var(--muted);margin:3px 0 0}.next{background:#eef8fb;border:1px solid #d7ebf3;border-radius:14px;padding:15px}.next small{color:var(--brand);font-weight:850;text-transform:uppercase;letter-spacing:.08em}.next b{display:block;margin-top:4px}
+section{padding:82px 0}.section-head{max-width:780px;margin-bottom:38px}.section-head h2{font-size:clamp(32px,4vw,48px);line-height:1.08;letter-spacing:-.03em;margin:0 0 14px}.section-head p{font-size:18px;color:var(--muted);margin:0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{border:1px solid var(--line);border-radius:22px;padding:25px;background:#fff;box-shadow:0 8px 26px rgba(9,40,61,.04)}.card .num{font-size:12px;color:var(--brand);font-weight:850;letter-spacing:.08em}.card h3{font-size:20px;margin:10px 0 8px}.card p{font-size:15px;color:var(--muted);margin:0}.wide{grid-column:span 2}
+.band{background:var(--soft)}.arch{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:15px;align-items:center}.box{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;text-align:center}.box b{display:block;margin-bottom:6px}.box span{font-size:14px;color:var(--muted)}.arrow{font-size:24px;color:var(--brand2)}
+.sec{display:grid;grid-template-columns:1fr 1fr;gap:24px}.sec-list{display:grid;gap:12px}.sec-item{border:1px solid var(--line);border-radius:14px;padding:15px;background:#fff}.sec-item b{display:block}.sec-item span{font-size:13px;color:var(--muted)}
+.cta{background:linear-gradient(135deg,#0d2539,#0b4f75);color:#fff;border-radius:28px;padding:46px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}.cta h2{font-size:36px;line-height:1.1;margin:0 0 10px}.cta p{margin:0;color:#d8e7ef}.cta .btn{background:#fff;color:var(--ink)}
+footer{padding:34px 0 48px;border-top:1px solid var(--line);color:#667788;font-size:13px}.footer{display:flex;justify-content:space-between;gap:24px}.footer strong{color:var(--ink);letter-spacing:.08em}
+@media(max-width:900px){.links a:not(.btn){display:none}.hero-grid,.sec,.cta{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.wide{grid-column:auto}.arch{grid-template-columns:1fr}.arrow{transform:rotate(90deg);text-align:center}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top"><span class="mark"></span><span>BAIES</span></a>
+    <div class="links">
+      <a href="#billimax">Billimax</a><a href="#capabilities">Capabilities</a><a href="#integration">Integration</a><a href="#security">Security</a>
+      <a class="btn primary" href="mailto:saehunkwak@gmail.com?subject=Baies%20%2F%20Billimax%20Inquiry">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow"><span class="dot"></span> Early-stage dental software</div>
+      <h1>AI built around the way each dental practice actually works.</h1>
+      <p class="lead">Baies is developing <strong>Billimax</strong>, an AI-powered dental practice operations and revenue-cycle platform designed to use each participating practice's authorized data, workflows, payer mix, and operating patterns to surface what should happen next.</p>
+      <div class="actions"><a class="btn primary" href="#billimax">Explore Billimax</a><a class="btn" href="mailto:saehunkwak@gmail.com?subject=Integration%20Partnership%20with%20Baies">Integration partnerships</a></div>
+      <div class="note">Designed to complement existing practice-management and payer-connected systems—not replace them.</div>
+    </div>
+    <div class="visual">
+      <div class="app">
+        <div class="app-top"><div class="mini">BILLIMAX</div><div class="pill">Practice-specific AI</div></div>
+        <div class="patient"><b>Patient timeline</b><span>Appointments • treatment • insurance • claims • payments</span></div>
+        <div class="event"><b>Visit context</b><p>Prior history and current responses are brought into one working context.</p></div>
+        <div class="event"><b>Pre-claim reconciliation</b><p>Procedures, documentation, attachments and payer-required information are checked for exceptions.</p></div>
+        <div class="event"><b>Revenue follow-up</b><p>Outstanding claims and balances are prioritized using source-specific evidence.</p></div>
+        <div class="next"><small>Billimax asks</small><b>What should happen next—and why?</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="billimax">
+  <div class="wrap">
+    <div class="section-head"><h2>One patient context across the visit and revenue cycle.</h2><p>Billimax is intended to connect authorized practice, clinical, patient, insurance and financial data into a common timeline so staff can move from exception to explanation to action.</p></div>
+    <div class="cards" id="capabilities">
+      <article class="card"><div class="num">01</div><h3>Patient Intake & Interactive Visit Discovery</h3><p>Prepare forms and signatures, combine current responses with authorized prior history, and surface relevant follow-up questions or potential treatment/procedural opportunities for staff or clinician review.</p></article>
+      <article class="card"><div class="num">02</div><h3>Patient Opportunity Engine</h3><p>Identify recall, existing or unscheduled treatment, scheduling and insurance-timing opportunities, then support appropriate office-approved outreach by text, email or other channels.</p></article>
+      <article class="card"><div class="num">03</div><h3>Pre-Walkout / Pre-Claim Reconciliation</h3><p>Identify missing or inconsistent procedures, documentation, coding, coverage, scheduling, attachments and payer-required information before the patient leaves and before claim submission.</p></article>
+      <article class="card"><div class="num">04</div><h3>Revenue Recovery & Collections</h3><p>Track eligibility, benefits, claim status, payer response, denials, underpayments, A/R follow-up and patient responsibility after adjudication.</p></article>
+      <article class="card wide"><div class="num">05</div><h3>Finance, Audit & Practice Intelligence</h3><p>Reconcile financial and operational activity, monitor production, collections, payer performance and A/R, identify exceptions or missed charges, and support financial, auditing and practice-management reporting.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="integration" class="band">
+  <div class="wrap">
+    <div class="section-head"><h2>Built as an intelligence layer over the systems a practice already uses.</h2><p>Billimax is intended to use vendor-supported integration methods and authorized data access. Practice-management facts, payer-connected data and Billimax recommendations remain distinguishable and traceable.</p></div>
+    <div class="arch">
+      <div class="box"><b>Practice systems</b><span>Patient • appointments • treatment • clinical notes • ledger</span></div><div class="arrow">→</div>
+      <div class="box"><b>Billimax canonical patient timeline</b><span>Normalized facts with source provenance and practice-specific context</span></div><div class="arrow">←</div>
+      <div class="box"><b>Payer-connected systems</b><span>Eligibility • benefits • claims • attachments • status • remittance</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="security">
+  <div class="wrap sec">
+    <div class="section-head"><h2>Security and authorization are part of the product design.</h2><p>Development is intended to begin with supported, minimum-necessary access and clear separation between testing and authorized production data.</p></div>
+    <div class="sec-list">
+      <div class="sec-item"><b>Read-only first</b><span>No production write operations without vendor and dental-practice approval.</span></div>
+      <div class="sec-item"><b>Vendor-supported integration</b><span>Use supported APIs and partner pathways rather than unauthorized direct database access.</span></div>
+      <div class="sec-item"><b>Minimum necessary</b><span>Least-privilege access, secure credential management, tenant isolation and PHI-safe logging.</span></div>
+      <div class="sec-item"><b>Source provenance</b><span>Practice facts, payer responses and Billimax-derived recommendations remain distinguishable.</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta"><div><h2>Interested in partnering with Baies?</h2><p>We are evaluating supported integration pathways for Billimax with practice-management, payer/RCM and other authorized dental technology platforms.</p></div><a class="btn" href="mailto:saehunkwak@gmail.com?subject=Baies%20Integration%20Partnership">Contact Baies</a></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap footer">
+    <div><strong>BAIES</strong><br>Developing Billimax</div>
+    <div style="max-width:760px">Billimax is under development. Clinical findings, diagnosis, treatment planning and procedure selection remain the responsibility of treating dental professionals. Payer-specific coverage, claim and reimbursement requirements remain subject to the applicable payer, plan and provider agreement.<br><br>Contact: <a href="mailto:saehunkwak@gmail.com">saehunkwak@gmail.com</a> · <a href="tel:+19253752776">+1 925 375 2776</a></div>
+  </div>
+</footer>
+</body>
+</html>
