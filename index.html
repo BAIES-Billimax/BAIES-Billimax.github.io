@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BAIES | Billimax</title>
+  <meta name="description" content="BAIES develops Billimax, an AI-powered dental practice operations and revenue-cycle platform." />
+  <style>
+    :root{
+      --navy:#062f61;
+      --navy-2:#0b4b87;
+      --blue:#0c67c8;
+      --sky:#eaf8ff;
+      --mint:#36b987;
+      --ink:#0a2d55;
+      --text:#274865;
+      --muted:#667c91;
+      --line:#dce8f3;
+      --max:1220px;
+      --shadow:0 18px 48px rgba(23,69,112,.15);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#fff;line-height:1.5}
+    a{color:inherit}
+    .wrap{width:min(var(--max),calc(100% - 48px));margin:auto}
+    header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(220,232,243,.9)}
+    .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+    .brand{display:flex;align-items:center;gap:11px;text-decoration:none}
+    .brand-icon{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:#fff;font:700 18px/1 Georgia,serif;letter-spacing:.02em}
+    .brand-name{font-size:21px;font-weight:800;letter-spacing:.015em;color:var(--ink)}
+    .nav-links{display:flex;align-items:center;gap:30px}
+    .nav-links a{text-decoration:none;font-size:14px;font-weight:650;color:var(--text)}
+    .nav-links a:hover{color:var(--blue)}
+    .cta{display:inline-flex;align-items:center;justify-content:center;padding:12px 22px;border-radius:999px;background:var(--blue);color:#fff!important;font-weight:800!important;box-shadow:0 8px 20px rgba(12,103,200,.18)}
+    .hero{position:relative;overflow:hidden;padding:86px 0 78px;background:radial-gradient(circle at 86% 15%,rgba(80,170,220,.22),transparent 28%),radial-gradient(circle at 5% 50%,rgba(55,185,135,.12),transparent 24%),linear-gradient(180deg,#fff 0%,#f8fcff 100%)}
+    .hero-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:56px;align-items:center}
+    .kicker{font-size:12px;letter-spacing:.22em;font-weight:850;color:var(--blue);text-transform:uppercase;margin-bottom:16px}
+    h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(50px,6.5vw,82px);line-height:.95;letter-spacing:-.045em;margin:0 0 24px;color:var(--ink);max-width:610px}
+    .hero-copy{font-size:18px;line-height:1.62;color:var(--text);max-width:610px}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:999px;text-decoration:none;font-weight:800;border:1px solid var(--line);background:#fff;color:var(--ink)}
+    .btn.primary{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 10px 28px rgba(12,103,200,.2)}
+    .dashboard-shell{background:#fff;border:1px solid #cfe0ef;border-radius:24px;box-shadow:var(--shadow);overflow:hidden;transform:perspective(1200px) rotateY(-1deg)}
+    .dashboard{display:grid;grid-template-columns:155px 1fr;min-height:505px}
+    .dash-side{background:#073663;color:#edf7ff;padding:16px 13px}
+    .dash-brand{display:flex;align-items:center;gap:9px;padding:4px 2px 17px;border-bottom:1px solid rgba(255,255,255,.18);margin-bottom:12px}
+    .dash-brand .dotlogo{width:28px;height:28px;border-radius:50%;background:#fff;color:var(--navy);display:grid;place-items:center;font:700 14px Georgia,serif}
+    .dash-brand b{font-size:12px;letter-spacing:.02em}
+    .dash-menu{display:grid;gap:5px}
+    .dash-menu div{padding:8px 9px;border-radius:8px;font-size:11px;opacity:.92}
+    .dash-menu .active{background:#0c66ad;color:#fff;font-weight:800}
+    .dash-main{padding:16px 16px 18px;background:#fcfdff}
+    .dash-top{display:flex;justify-content:space-between;gap:18px;align-items:flex-start}
+    .dash-top small{color:var(--muted);font-size:10px}
+    .dash-top h3{margin:2px 0 0;font-size:15px;color:var(--ink)}
+    .dash-date{font-size:10px;color:#6b7d8f;white-space:nowrap}
+    .dash-headline{font-size:23px;font-weight:850;color:#135fbd;margin:15px 0 6px;line-height:1.1}
+    .dash-summary{font-size:12px;font-weight:750;color:#2b445b;margin-bottom:14px}
+    .dash-summary .green{color:#16a56f}
+    .metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:12px}
+    .metric{border-radius:10px;padding:11px;border:1px solid var(--line);min-height:90px}
+    .metric:nth-child(1){background:#eff5ff}.metric:nth-child(2){background:#f5efff}.metric:nth-child(3){background:#eaf8ff}.metric:nth-child(4){background:#edf8ff}.metric:nth-child(5){background:#fff4f6}.metric:nth-child(6){background:#eefaf2}
+    .metric span{font-size:9px;font-weight:800;color:#45637b;display:block;min-height:24px}.metric strong{display:block;font-size:22px;line-height:1;color:#15395d}.metric small{font-size:9px;color:#6a7b8e}
+    .mini-tabs{display:flex;gap:16px;border-bottom:1px solid var(--line);margin-top:6px;font-size:9px;color:#687d91}.mini-tabs b{padding:8px 0;color:#125da8;border-bottom:2px solid #125da8}
+    .dash-table{margin-top:8px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+    .dash-row{display:grid;grid-template-columns:1.5fr .9fr .8fr .7fr .8fr;gap:8px;align-items:center;padding:10px;border-top:1px solid var(--line);font-size:9px;color:#405b73}
+    .dash-row:first-child{border-top:none;background:#f6f9fc;font-weight:800;color:#74869a;text-transform:uppercase;letter-spacing:.04em}
+    .patient-cell{display:flex;align-items:center;gap:8px}.avatar{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:8px;font-weight:800;background:#26a780}.avatar.blue{background:#2c78c9}.avatar.orange{background:#e99b2e}.avatar.purple{background:#7b63c3}
+    .status{padding:4px 7px;border-radius:999px;text-align:center;font-size:8px;font-weight:800;background:#eaf8f1;color:#16875e}.status.warn{background:#fff0f2;color:#d04e63}.status.review{background:#edf5ff;color:#2d6aa3}
+    .feature-stack{padding:58px 0 30px}.feature{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:58px 0}.feature:nth-child(even) .feature-copy{order:2}.feature:nth-child(even) .illustration{order:1}
+    .feature .eyebrow{font-size:12px;letter-spacing:.17em;text-transform:uppercase;font-weight:850;color:var(--mint);margin-bottom:12px}.feature h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(38px,4.5vw,58px);line-height:1.02;letter-spacing:-.035em;margin:0 0 18px;color:var(--ink)}.feature p{font-size:17px;line-height:1.65;color:var(--text);margin:0}
+    .feature.alt{background:var(--sky);margin-left:calc((100vw - min(var(--max), calc(100vw - 48px)))/-2);margin-right:calc((100vw - min(var(--max), calc(100vw - 48px)))/-2);padding-left:calc((100vw - min(var(--max), calc(100vw - 48px)))/2);padding-right:calc((100vw - min(var(--max), calc(100vw - 48px)))/2)}
+    .illustration{min-height:350px;display:grid;place-items:center;position:relative}.blob{position:absolute;width:315px;height:265px;border-radius:50%;background:rgba(75,173,221,.12);filter:blur(.2px)}.blob.green{width:200px;height:190px;background:rgba(54,185,135,.12);right:7%;bottom:8%}
+    .ui-stage{position:relative;z-index:2;width:min(100%,470px);min-height:300px;display:grid;place-items:center}
+    .ui-window{width:420px;background:rgba(255,255,255,.98);border:1px solid #cfe0ed;border-radius:20px;box-shadow:0 20px 44px rgba(21,69,108,.16);overflow:hidden}
+    .ui-titlebar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 16px;border-bottom:1px solid var(--line);background:#fbfdff}.ui-titlebar b{font-size:13px;color:#173a5d}.ui-titlebar span{font-size:10px;color:var(--muted)}
+    .ui-dots{display:flex;gap:5px}.ui-dots i{width:7px;height:7px;border-radius:50%;background:#d6e2ed}.ui-dots i:first-child{background:#34b685}.ui-dots i:nth-child(2){background:#77bce3}
+    .ready-body{display:grid;grid-template-columns:1.12fr .88fr;gap:0}.readiness-list{padding:14px 16px}.readiness-row{display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:center;padding:11px 0;border-bottom:1px solid #edf2f6}.readiness-row:last-child{border-bottom:none}.r-icon{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;background:#edf6ff;color:#1268b1;font-size:15px;font-weight:900}.r-copy b{display:block;font-size:12px;color:#254863}.r-copy span{font-size:10px;color:#7a8b9b}.r-state{font-size:9px;font-weight:850;padding:5px 7px;border-radius:999px;background:#e9f8f0;color:#19845c}.r-state.review{background:#fff3df;color:#a46b0e}
+    .requirement-panel{background:#f4f9fd;border-left:1px solid var(--line);padding:15px}.requirement-panel .cap{font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:#6f8293;font-weight:850}.requirement-panel h4{font-size:13px;margin:5px 0 10px;color:#183d61}.req{display:flex;align-items:center;gap:8px;padding:8px 0;font-size:10px;color:#45647e;border-bottom:1px solid #e2edf4}.req:last-child{border-bottom:none}.req .tick{width:17px;height:17px;border-radius:5px;display:grid;place-items:center;background:#28ae73;color:#fff;font-size:10px;font-weight:900}.req .warn{background:#ef9e42}.ready-footer{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;border-top:1px solid var(--line);background:#fff}.ready-footer span{font-size:10px;color:#63788c}.ready-footer b{font-size:10px;color:#0e66b4}
+    .opp-window{width:430px;background:#fff;border:1px solid #cfe0ed;border-radius:20px;box-shadow:0 20px 44px rgba(21,69,108,.16);overflow:hidden}.opp-top{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:15px 16px;border-bottom:1px solid var(--line)}.opp-person{display:flex;align-items:center;gap:10px}.initials{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#1768a7,#34a486);color:#fff;font-weight:850;font-size:12px}.opp-person b{display:block;font-size:13px;color:#173a5d}.opp-person span{display:block;font-size:10px;color:#7a8b9b}.opp-score{font-size:9px;font-weight:850;padding:6px 8px;border-radius:999px;background:#eaf7f1;color:#19845c}.opp-grid{display:grid;grid-template-columns:.9fr 1.1fr}.context-col{padding:14px;border-right:1px solid var(--line);background:#f8fbfe}.context-label{font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:#708394;font-weight:850;margin-bottom:8px}.context-item{padding:9px 0;border-bottom:1px solid #e7eff5}.context-item:last-child{border-bottom:none}.context-item b{display:block;font-size:11px;color:#294b65}.context-item span{font-size:10px;color:#7b8c9c}.action-col{padding:14px}.action-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}.action-head b{font-size:12px;color:#193f62}.action-head span{font-size:9px;color:#0f68b6;font-weight:800}.opp-action{display:grid;grid-template-columns:25px 1fr auto;gap:8px;align-items:start;padding:10px 0;border-bottom:1px solid #edf2f6}.opp-action:last-child{border-bottom:none}.a-num{width:24px;height:24px;border-radius:8px;display:grid;place-items:center;background:#eaf4ff;color:#1268b1;font-size:10px;font-weight:900}.opp-action b{display:block;font-size:11px;color:#284a64}.opp-action span{display:block;font-size:9px;color:#7a8b9b;margin-top:2px}.a-badge{font-size:8px;font-weight:850;padding:5px 6px;border-radius:999px;background:#edf8f1;color:#1a875f}.a-badge.medium{background:#fff3df;color:#a56e12}.opp-footer{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:10px 14px;border-top:1px solid var(--line);background:#fbfdff}.opp-footer span{font-size:9px;color:#6b8091}.opp-footer b{font-size:9px;color:#0f68b6}
+    .chartbox{position:relative;z-index:2;width:320px;height:250px;background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:0 15px 34px rgba(17,68,107,.12);padding:30px}.bars{height:150px;display:flex;align-items:end;gap:14px;padding-top:18px}.bar{width:34px;border-radius:7px 7px 0 0;background:linear-gradient(180deg,#1b80d8,#0c4f9a)}.bar:nth-child(1){height:55px}.bar:nth-child(2){height:88px}.bar:nth-child(3){height:112px}.bar:nth-child(4){height:142px}
+    .money{position:absolute;right:-26px;bottom:16px;width:88px;height:88px;border-radius:50%;background:#28ab72;color:#fff;display:grid;place-items:center;font:700 42px Georgia,serif;border:8px solid #d8f5e7;box-shadow:0 10px 25px rgba(36,167,110,.2)}.revenue-checks{position:absolute;right:-34px;top:28px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px;display:grid;gap:8px;box-shadow:0 10px 25px rgba(18,68,108,.12)}.revenue-checks span{font-size:11px;color:#35526c}.revenue-checks span:before{content:"✓";display:inline-grid;place-items:center;width:16px;height:16px;border-radius:50%;background:#23ae72;color:#fff;margin-right:7px;font-size:10px;font-weight:900}
+    footer{background:var(--navy);color:#fff;padding:52px 0 28px}.footer-grid{display:grid;grid-template-columns:.8fr 1fr 1.2fr;gap:36px;align-items:start}.footer-brand{display:flex;align-items:center;gap:11px}.footer-brand .brand-icon{background:#fff;color:var(--navy)}.footer-brand .brand-name{color:#fff}
+    footer h3{font-family:Georgia,"Times New Roman",serif;font-size:31px;margin:0 0 8px}footer p{margin:0;color:#d5e5f3;font-size:14px}.contact-line{display:flex;align-items:center;gap:11px;margin:9px 0;color:#edf6ff;font-size:14px}.contact-line a{text-decoration:none;color:#fff}.footer-bottom{margin-top:30px;padding-top:18px;border-top:1px solid rgba(255,255,255,.16);display:flex;justify-content:space-between;gap:24px;color:#b8ccde;font-size:12px}.footer-links{display:flex;gap:22px}.footer-links a{text-decoration:none;color:#d7e7f4}
+    @media(max-width:1000px){.hero-grid,.feature,.footer-grid{grid-template-columns:1fr}.dashboard-shell{transform:none}.feature:nth-child(even) .feature-copy,.feature:nth-child(even) .illustration{order:initial}.nav-links a:not(.cta){display:none}.feature.alt{margin:0;padding-left:0;padding-right:0;border-radius:24px;padding:34px}}
+    @media(max-width:680px){.wrap{width:min(var(--max),calc(100% - 24px))}.hero{padding-top:58px}h1{font-size:48px}.dashboard{grid-template-columns:1fr}.dash-side{display:none}.metric-grid{grid-template-columns:repeat(2,1fr)}.dash-row{grid-template-columns:1fr 1fr}.dash-row>div:nth-child(n+3){display:none}.feature{gap:28px;padding:40px 0}.illustration{min-height:auto}.ui-window,.opp-window,.chartbox{width:100%;max-width:430px;margin:auto}.ready-body,.opp-grid{grid-template-columns:1fr}.requirement-panel,.context-col{border-left:none;border-right:none;border-top:1px solid var(--line)}.footer-bottom{flex-direction:column}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="BAIES home"><span class="brand-icon">b</span><span class="brand-name">BAIES</span></a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#platform">Platform</a><a href="#solutions">Solutions</a><a href="#contact">Contact</a><a class="cta" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" id="platform">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="kicker">Practice intelligence for dental teams</div>
+      <h1>AI for the modern dental practice.</h1>
+      <p class="hero-copy">BAIES develops Billimax, an AI-powered dental practice operations and revenue-cycle platform. Billimax supports patient intake and interactive visit discovery, patient opportunity identification, pre-walkout/pre-claim reconciliation, revenue recovery and collections, and finance, audit, and practice intelligence. It is designed to become increasingly tailored to each participating practice by using that office’s authorized historical data, workflows, payer mix, and operating patterns to provide context-specific assistance and recommendations.</p>
+      <div class="hero-actions"><a class="btn primary" href="#contact">Contact BAIES</a></div>
+    </div>
+
+    <div class="dashboard-shell" aria-label="Illustrative Billimax dashboard">
+      <div class="dashboard">
+        <aside class="dash-side">
+          <div class="dash-brand"><span class="dotlogo">b</span><b>Billimax</b></div>
+          <div class="dash-menu"><div class="active">Morning Huddle</div><div>Intake</div><div>Opportunities</div><div>Reconciliation</div><div>Claims</div><div>Collections</div><div>Finance</div><div>Audit</div><div style="margin-top:22px">Patients</div><div>Reports</div><div>Settings</div></div>
+        </aside>
+        <div class="dash-main">
+          <div class="dash-top"><div><small>Morning Huddle</small><h3>Good morning, Dr. Carter 👋</h3></div><div class="dash-date">Wed, Sep 9, 2026</div></div>
+          <div class="dash-headline">Here's what's happening today.</div>
+          <div class="dash-summary">You have <span class="green">68 patients</span> on schedule and <span class="green">$18,420</span> in prioritized opportunities and revenue follow-up.</div>
+          <div class="metric-grid">
+            <div class="metric"><span>New Intake Reviews</span><strong>19</strong><small>due Sep 9</small></div>
+            <div class="metric"><span>Patient Opportunities</span><strong>31</strong><small>$8,740 identified</small></div>
+            <div class="metric"><span>Pre-Claim Items</span><strong>12</strong><small>due Sep 9–10</small></div>
+            <div class="metric"><span>Insurance Follow-Ups</span><strong>24</strong><small>due Sep 10</small></div>
+            <div class="metric"><span>AR at Risk</span><strong>$21,860</strong><small>across 34 accounts</small></div>
+            <div class="metric"><span>Production vs Goal</span><strong>$61,240</strong><small>$9,840 above goal</small></div>
+          </div>
+          <div class="mini-tabs"><b>Priority Worklist</b><span>Patient Opportunities</span><span>Claims & Insurance</span><span>Financial Exceptions</span></div>
+          <div class="dash-table">
+            <div class="dash-row"><div>Patient / Work Item</div><div>Type</div><div>Due</div><div>Value</div><div>Status</div></div>
+            <div class="dash-row"><div class="patient-cell"><span class="avatar">EC</span><span>Emily Carter</span></div><div>Unscheduled Treatment</div><div>Sep 9</div><div>$1,240</div><div class="status">Follow Up</div></div>
+            <div class="dash-row"><div class="patient-cell"><span class="avatar orange">JM</span><span>James Miller</span></div><div>Insurance Follow-Up</div><div>Sep 9</div><div>$892</div><div class="status warn">Action Needed</div></div>
+            <div class="dash-row"><div class="patient-cell"><span class="avatar blue">SL</span><span>Sophia Lee</span></div><div>Claim Review</div><div>Sep 10</div><div>$1,320</div><div class="status review">Review</div></div>
+            <div class="dash-row"><div class="patient-cell"><span class="avatar purple">RK</span><span>Robert Kim</span></div><div>Recall Due</div><div>Sep 11</div><div>$350</div><div class="status">Contact</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="feature-stack" id="solutions"><div class="wrap">
+  <article class="feature">
+    <div class="feature-copy"><div class="eyebrow">Patient intake + pre-claim readiness</div><h2>See what needs attention before it slips.</h2><p>Billimax is designed to help the team connect patient forms, visit context, documentation, procedures, coding, coverage, and payer-required information so missing items can be identified before the patient leaves and before the claim goes out.</p></div>
+    <div class="illustration"><div class="blob"></div><div class="blob green"></div><div class="ui-stage"><div class="ui-window"><div class="ui-titlebar"><div><b>Pre-Walkout Review</b><span style="display:block;margin-top:2px">Today · 2:30 PM</span></div><div class="ui-dots"><i></i><i></i><i></i></div></div><div class="ready-body"><div class="readiness-list"><div class="readiness-row"><div class="r-icon">✓</div><div class="r-copy"><b>Patient intake</b><span>Forms, history, consent</span></div><div class="r-state">Complete</div></div><div class="readiness-row"><div class="r-icon">N</div><div class="r-copy"><b>Clinical documentation</b><span>Procedure note linked</span></div><div class="r-state">Complete</div></div><div class="readiness-row"><div class="r-icon">C</div><div class="r-copy"><b>Procedure & claim data</b><span>Code, tooth, surface, fee</span></div><div class="r-state">Complete</div></div><div class="readiness-row"><div class="r-icon">A</div><div class="r-copy"><b>Attachments</b><span>Carrier requirement detected</span></div><div class="r-state review">Review</div></div></div><div class="requirement-panel"><div class="cap">Carrier requirements</div><h4>Before claim submission</h4><div class="req"><span class="tick">✓</span><span>Radiograph attached</span></div><div class="req"><span class="tick">✓</span><span>Clinical narrative</span></div><div class="req"><span class="tick warn">!</span><span>Diagnosis confirmation</span></div></div></div><div class="ready-footer"><span>3 of 4 areas ready</span><b>Resolve 1 exception →</b></div></div></div></div>
+  </article>
+  <article class="feature alt">
+    <div class="feature-copy"><div class="eyebrow">Patient opportunity identification</div><h2>Turn patient context into timely follow-up.</h2><p>Billimax can help identify recall, unscheduled treatment, scheduling, insurance-timing, and other patient opportunities, then prioritize the right next action using each practice’s authorized history, workflows, and operating patterns.</p></div>
+    <div class="illustration"><div class="blob"></div><div class="blob green"></div><div class="ui-stage"><div class="opp-window"><div class="opp-top"><div class="opp-person"><div class="initials">MR</div><div><b>Maya R.</b><span>Established patient · next visit not scheduled</span></div></div><div class="opp-score">High priority</div></div><div class="opp-grid"><div class="context-col"><div class="context-label">Patient context</div><div class="context-item"><b>Recall</b><span>Due Sep 18 · no appointment</span></div><div class="context-item"><b>Existing treatment</b><span>2 unscheduled items · $1,480</span></div><div class="context-item"><b>Insurance timing</b><span>Benefits renew Jan 1</span></div><div class="context-item"><b>Last outreach</b><span>No office follow-up in 42 days</span></div></div><div class="action-col"><div class="action-head"><b>Recommended next actions</b><span>Billimax</span></div><div class="opp-action"><div class="a-num">1</div><div><b>Offer recall appointment</b><span>Combine with existing treatment discussion</span></div><div class="a-badge">Now</div></div><div class="opp-action"><div class="a-num">2</div><div><b>Surface treatment context</b><span>Show prior plan and insurance estimate to staff</span></div><div class="a-badge">Review</div></div><div class="opp-action"><div class="a-num">3</div><div><b>Prepare personalized outreach</b><span>Office-approved text or email message</span></div><div class="a-badge medium">Next</div></div></div></div><div class="opp-footer"><span>Based on authorized practice history and workflow context</span><b>View patient timeline →</b></div></div></div></div>
+  </article>
+  <article class="feature">
+    <div class="feature-copy"><div class="eyebrow">Revenue cycle + practice intelligence</div><h2>Recover revenue and run a better practice.</h2><p>Billimax is designed to track claim status, surface denials and underpayments, prioritize collections, identify financial exceptions, and support finance, audit, and practice-intelligence reporting in one connected workflow.</p></div>
+    <div class="illustration"><div class="blob"></div><div class="blob green"></div><div class="chartbox"><div class="bars"><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div></div><div class="money">$</div><div class="revenue-checks"><span>Track claim status</span><span>Identify denials</span><span>Find underpayments</span><span>Prioritize collections</span><span>Understand performance</span></div></div></div>
+  </article>
+</div></section>
+</main>
+
+<footer id="contact"><div class="wrap"><div class="footer-grid"><div class="footer-brand"><span class="brand-icon">b</span><span class="brand-name">BAIES</span></div><div><h3>Contact</h3><p>Questions about BAIES or Billimax? Let's connect.</p></div><div><div class="contact-line"><span>✉</span><a href="mailto:saehunkwak@gmail.com">saehunkwak@gmail.com</a></div><div class="contact-line"><span>☎</span><a href="tel:+19253752776">+1 925 375 2776</a></div></div></div><div class="footer-bottom"><span>© 2026 BAIES. All rights reserved.</span><div class="footer-links"><a href="#platform">Platform</a><a href="#solutions">Solutions</a><a href="#contact">Contact</a></div></div></div></footer>
+</body>
+</html>
